@@ -94,6 +94,14 @@
             color: #6a1b9a;
             font-size: 0.9em;
         }
+        .body-image {
+            text-align: center;
+            margin: 10px 0;
+        }
+        .body-image img {
+            max-width: 100%;
+            height: auto;
+        }
         @media (max-width: 600px) {
             ul {
                 columns: 1;
@@ -120,43 +128,7 @@
             <label>Data do Atendimento: <input type="date" id="dataAtendimento"></label><br><br>
             
             <section>
-                <h2>Clones</h2>
-                <ul>
-                    <li><label><input type="checkbox"> Sim</label></li>
-                    <li><label><input type="checkbox"> Não</label></li>
-                </ul>
-                <textarea placeholder="Obs.:"></textarea>
-            </section>
-            
-            <section>
-                <h2>Fractais</h2>
-                <ul>
-                    <li><label><input type="checkbox"> Traumas</label></li>
-                    <li><label><input type="checkbox"> Ascencionados</label></li>
-                    <li><label><input type="checkbox"> Inferiores</label></li>
-                    <li><label><input type="checkbox"> Extradimensionais</label></li>
-                    <li><label><input type="checkbox"> Presos</label></li>
-                    <li><label><input type="checkbox"> Vida Passada</label></li>
-                    <li><label><input type="checkbox"> Vida Atual</label></li>
-                    <li><label><input type="checkbox"> Vida Paralela</label></li>
-                </ul>
-                <textarea placeholder="Obs.:"></textarea>
-            </section>
-            
-            <section>
-                <h2>Sólidos Platônicos</h2>
-                <ul>
-                    <li><label><input type="checkbox"> Tetraedro</label></li>
-                    <li><label><input type="checkbox"> Hexaedro (Cubo)</label></li>
-                    <li><label><input type="checkbox"> Octaedro</label></li>
-                    <li><label><input type="checkbox"> Dodecaedro</label></li>
-                    <li><label><input type="checkbox"> Icosaedro</label></li>
-                </ul>
-                <textarea placeholder="Obs.:"></textarea>
-            </section>
-            
-            <section>
-                <h2>Navios Convocados</h2>
+                <h2>Naves Convocadas</h2>
                 <ul>
                     <li><label><input type="checkbox"> Comando Santa Esmeralda</label></li>
                     <li><label><input type="checkbox"> Comando Santa Ametista</label></li>
@@ -168,7 +140,7 @@
             </section>
             
             <section>
-                <h2>Equipamentos Estelares Convocados</h2>
+                <h2>Equipes Estelares Convocadas</h2>
                 <ul>
                     <li><label><input type="checkbox"> Arcturianos</label></li>
                     <li><label><input type="checkbox"> Pleiadianos</label></li>
@@ -195,7 +167,7 @@
             </section>
             
             <section>
-                <h2>Trindade Angelical</h2>
+                <h2>Trindade Astral</h2>
                 <ul>
                     <li><label><input type="checkbox"> Potestades</label></li>
                     <li><label><input type="checkbox"> Principados</label></li>
@@ -219,67 +191,8 @@
             </section>
             
             <section>
-                <h2>Câmaras Arcturianas Ativadas</h2>
-                <ul>
-                    <li><label><input type="checkbox"> Programa de remoção de Matriz</label></li>
-                    <li><label><input type="checkbox"> Placa eletrônica Arcturiana</label></li>
-                    <li><label><input type="checkbox"> Tecnologia Arcturiana de Infusão de Luz</label></li>
-                    <li><label><input type="checkbox"> Câmara de Amor e Alegria Arcturiana</label></li>
-                    <li><label><input type="checkbox"> Cilindro Dourado Arcturiano</label></li>
-                    <li><label><input type="checkbox"> Geração dos Arcturianos das 12 cadeias de DNA</label></li>
-                    <li><label><input type="checkbox"> Tecnologia Cristalina para curar feridas</label></li>
-                    <li><label><input type="checkbox"> Proteção Cristalina das crianças</label></li>
-                    <li><label><input type="checkbox"> Aumento do Quociente de luz para Fortalecer o corpo físico</label></li>
-                    <li><label><input type="checkbox"> Invocação dos Arcturianos em situações extremas</label></li>
-                    <li><label><input type="checkbox"> Tecnologia Arcturiana do Cristal Líquido</label></li>
-                    <li><label><input type="checkbox"> Máquina Arcturiana de prana</label></li>
-                    <li><label><input type="checkbox"> Sistema Arcturiano de revestment</label></li>
-                    <li><label><input type="checkbox"> Máquina Arcturiana do Júbilo</label></li>
-                    <li><label><input type="checkbox"> Aumento Arcturiano de voltagem</label></li>
-                    <li><label><input type="checkbox"> Reprogramação Arcturiana da estrutura bioquímica elétrica</label></li>
-                    <li><label><input type="checkbox"> Mestres de cura plano interior</label></li>
-                    <li><label><input type="checkbox"> Restauração da Matriz divina</label></li>
-                    <li><label><input type="checkbox"> Banhos de cor nos templos de cura do plano interior</label></li>
-                    <li><label><input type="checkbox"> Purificação por meio do programa de eliminação do medo</label></li>
-                    <li><label><input type="checkbox"> Eliminação de resíduos tóxicos etéricos</label></li>
-                    <li><label><input type="checkbox"> Ajuste da rede etérica</label></li>
-                    <li><label><input type="checkbox"> Purificação de velhas marcas do campo de energia</label></li>
-                    <li><label><input type="checkbox"> Purificação genética completa</label></li>
-                    <li><label><input type="checkbox"> Purificação celular cósmica</label></li>
-                    <li><label><input type="checkbox"> Câmara de Purificação dos animais de estimação</label></li>
-                </ul>
-                <textarea placeholder="Obs.:"></textarea>
-            </section>
-            
-            <section>
-                <h2>Influências Energéticas</h2>
-                <ul>
-                    <li><label><input type="checkbox"> Trabalhos Mágicos</label></li>
-                    <li><label><input type="checkbox"> Afasta mento</label></li>
-                    <li><label><input type="checkbox"> Amarração</label></li>
-                    <li><label><input type="checkbox"> Vingança/Destruição</label></li>
-                    <li><label><input type="checkbox"> Contratos Energéticos</label></li>
-                    <li><label><input type="checkbox"> Religião/Culto/Seita</label></li>
-                    <li><label><input type="checkbox"> Profissional</label></li>
-                    <li><label><input type="checkbox"> Ancestralidade/Familiar</label></li>
-                    <li><label><input type="checkbox"> Íncubus/Súcubos</label></li>
-                    <li><label><input type="checkbox"> Magos negativos</label></li>
-                    <li><label><input type="checkbox"> Multidimensionais</label></li>
-                    <li><label><input type="checkbox"> Decretos/Votos</label></li>
-                    <li><label><input type="checkbox"> Pobreza/Celibato</label></li>
-                    <li><label><input type="checkbox"> Servidão Astral</label></li>
-                    <li><label><input type="checkbox"> Casamento/Relacionamento</label></li>
-                    <li><label><input type="checkbox"> Obsessores</label></li>
-                    <li><label><input type="checkbox"> Encarnado</label></li>
-                    <li><label><input type="checkbox"> Desencarnado</label></li>
-                    <li><label><input type="checkbox"> Auto-Obsessão</label></li>
-                </ul>
-                <textarea placeholder="Obs.:"></textarea>
-            </section>
-            
-            <section>
                 <h2>Limpezas Energéticas</h2>
-                <h3>Tipo</h3>
+                <h3>Tipos</h3>
                 <ul>
                     <li><label><input type="checkbox"> Acúmulo Energético</label></li>
                     <li><label><input type="checkbox"> Miasmas</label></li>
@@ -292,6 +205,10 @@
                     <li><label><input type="checkbox"> Implants</label></li>
                 </ul>
                 <h3>Localização</h3>
+                <div class="body-image">
+                    <!-- Adicione uma imagem do corpo humano aqui, ex.: <img src="URL_DA_IMAGEM" alt="Corpo Humano"> -->
+                    <p>Insira uma imagem do corpo humano (ex.: de Unsplash) com a tag <img src="URL_DA_IMAGEM" alt="Corpo Humano">. Use a foto enviada como referência.</p>
+                </div>
                 <ul>
                     <li><label><input type="checkbox"> Cabeça</label></li>
                     <li><label><input type="checkbox"> Olhos</label></li>
@@ -366,17 +283,97 @@
                 <textarea placeholder="Obs.:"></textarea>
             </section>
             
-            <button type="button" onclick="gerarPDF()">Gerar PDF</button>
-        </form>
-    </div>
-    
-    <script>
-        function gerarPDF() {
-            const { jsPDF } = window.jspdf;
-            const doc = new jsPDF();
-            let y = 10;
+            <section>
+                <h2>Ativação do DNA Energético</h2>
+                <ul>
+                    <li><label><input type="checkbox"> Ativação Inicial</label></li>
+                    <li><label><input type="checkbox"> Reprogramação Genética</label></li>
+                    <li><label><input type="checkbox"> Expansão de Consciência</label></li>
+                </ul>
+                <textarea placeholder="Obs.:"></textarea>
+            </section>
             
-            doc.setFontSize(16);
-            doc.text('Relatório de Atendimento', 105, y, { align: 'center' });
-            y += 10;
-            doc.setF
+            <section>
+                <h2>Câmaras Arcturianas Ativadas</h2>
+                <ul>
+                    <li><label><input type="checkbox"> Programa de remoção de Matriz</label></li>
+                    <li><label><input type="checkbox"> Placa eletrônica Arcturiana</label></li>
+                    <li><label><input type="checkbox"> Tecnologia Arcturiana de Infusão de Luz</label></li>
+                    <li><label><input type="checkbox"> Câmara de Amor e Alegria Arcturiana</label></li>
+                    <li><label><input type="checkbox"> Cilindro Dourado Arcturiano</label></li>
+                    <li><label><input type="checkbox"> Geração dos Arcturianos das 12 cadeias de DNA</label></li>
+                    <li><label><input type="checkbox"> Tecnologia Cristalina para curar feridas</label></li>
+                    <li><label><input type="checkbox"> Proteção Cristalina das crianças</label></li>
+                    <li><label><input type="checkbox"> Aumento do Quociente de luz para Fortalecer o corpo físico</label></li>
+                    <li><label><input type="checkbox"> Invocação dos Arcturianos em situações extremas</label></li>
+                    <li><label><input type="checkbox"> Tecnologia Arcturiana do Cristal Líquido</label></li>
+                    <li><label><input type="checkbox"> Máquina Arcturiana de prana</label></li>
+                    <li><label><input type="checkbox"> Sistema Arcturiano de revestment</label></li>
+                    <li><label><input type="checkbox"> Máquina Arcturiana do Júbilo</label></li>
+                    <li><label><input type="checkbox"> Aumento Arcturiano de voltagem</label></li>
+                    <li><label><input type="checkbox"> Reprogramação Arcturiana da estrutura bioquímica elétrica</label></li>
+                    <li><label><input type="checkbox"> Mestres de cura plano interior</label></li>
+                    <li><label><input type="checkbox"> Restauração da Matriz divina</label></li>
+                    <li><label><input type="checkbox"> Banhos de cor nos templos de cura do plano interior</label></li>
+                    <li><label><input type="checkbox"> Purificação por meio do programa de eliminação do medo</label></li>
+                    <li><label><input type="checkbox"> Eliminação de resíduos tóxicos etéricos</label></li>
+                    <li><label><input type="checkbox"> Ajuste da rede etérica</label></li>
+                    <li><label><input type="checkbox"> Purificação de velhas marcas do campo de energia</label></li>
+                    <li><label><input type="checkbox"> Purificação genética completa</label></li>
+                    <li><label><input type="checkbox"> Purificação celular cósmica</label></li>
+                    <li><label><input type="checkbox"> Câmara de Purificação dos animais de estimação</label></li>
+                </ul>
+                <textarea placeholder="Obs.:"></textarea>
+            </section>
+            
+            <section>
+                <h2>Influências Energéticas</h2>
+                <ul>
+                    <li><label><input type="checkbox"> Trabalhos Mágicos</label></li>
+                    <li><label><input type="checkbox"> Afasta mento</label></li>
+                    <li><label><input type="checkbox"> Amarração</label></li>
+                    <li><label><input type="checkbox"> Vingança/Destruição</label></li>
+                    <li><label><input type="checkbox"> Contratos Energéticos</label></li>
+                    <li><label><input type="checkbox"> Religião/Culto/Seita</label></li>
+                    <li><label><input type="checkbox"> Profissional</label></li>
+                    <li><label><input type="checkbox"> Ancestralidade/Familiar</label></li>
+                    <li><label><input type="checkbox"> Íncubus/Súcubos</label></li>
+                    <li><label><input type="checkbox"> Magos negativos</label></li>
+                    <li><label><input type="checkbox"> Multidimensionais</label></li>
+                    <li><label><input type="checkbox"> Decretos/Votos</label></li>
+                    <li><label><input type="checkbox"> Pobreza/Celibato</label></li>
+                    <li><label><input type="checkbox"> Servidão Astral</label></li>
+                    <li><label><input type="checkbox"> Casamento/Relacionamento</label></li>
+                    <li><label><input type="checkbox"> Obsessores</label></li>
+                    <li><label><input type="checkbox"> Encarnado</label></li>
+                    <li><label><input type="checkbox"> Desencarnado</label></li>
+                    <li><label><input type="checkbox"> Auto-Obsessão</label></li>
+                </ul>
+                <textarea placeholder="Obs.:"></textarea>
+            </section>
+            
+            <section>
+                <h2>Clones</h2>
+                <ul>
+                    <li><label><input type="checkbox"> Sim</label></li>
+                    <li><label><input type="checkbox"> Não</label></li>
+                </ul>
+                <textarea placeholder="Obs.:"></textarea>
+            </section>
+            
+            <section>
+                <h2>Fractais</h2>
+                <ul>
+                    <li><label><input type="checkbox"> Traumas</label></li>
+                    <li><label><input type="checkbox"> Ascencionados</label></li>
+                    <li><label><input type="checkbox"> Inferiores</label></li>
+                    <li><label><input type="checkbox"> Extradimensionais</label></li>
+                    <li><label><input type="checkbox"> Presos</label></li>
+                    <li><label><input type="checkbox"> Vida Passada</label></li>
+                    <li><label><input type="checkbox"> Vida Atual</label></li>
+                    <li><label><input type="checkbox"> Vida Paralela</label></li>
+                </ul>
+                <textarea placeholder="Obs.:"></textarea>
+            </section>
+            
+        
