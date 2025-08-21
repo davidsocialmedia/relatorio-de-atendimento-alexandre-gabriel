@@ -5,337 +5,241 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Relatório de Atendimento Digital</title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 20px; background-color: #f9f9f9; color: #333; }
-        h1, h2 { color: #6a1b9a; text-align: center; }
-        section { margin-bottom: 20px; border: 1px solid #ddd; padding: 10px; border-radius: 5px; }
-        ul { list-style-type: none; padding: 0; }
-        li { margin-bottom: 5px; }
-        label { display: flex; align-items: center; }
-        input[type="checkbox"] { margin-right: 10px; }
-        textarea { width: 100%; height: 80px; margin-top: 10px; }
-        button { background-color: #6a1b9a; color: white; padding: 10px 20px; border: none; cursor: pointer; width: 100%; margin-top: 20px; }
-        button:hover { background-color: #4a148c; }
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"%3E%3Cpath d="M50 10 Q 70 30 90 50 Q 70 70 50 90 Q 30 70 10 50 Q 30 30 50 10" fill="none" stroke="%23e1bee7" stroke-width="2"/%3E%3C/svg%3E') repeat;
+            color: #333;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #6a1b9a;
+            text-align: center;
+            font-size: 2em;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+        h2 {
+            color: #8e24aa;
+            font-size: 1.5em;
+            margin-top: 20px;
+            border-bottom: 2px solid #ce93d8;
+            padding-bottom: 5px;
+        }
+        section {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #f5ebfd;
+            border-radius: 5px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+            columns: 2;
+            -webkit-columns: 2;
+            -moz-columns: 2;
+        }
+        li {
+            margin: 5px 0;
+        }
+        label {
+            display: flex;
+            align-items: center;
+            font-size: 0.9em;
+        }
+        input[type="checkbox"] {
+            margin-right: 10px;
+        }
+        input[type="text"], input[type="date"], textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ce93d8;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        textarea {
+            height: 60px;
+            resize: vertical;
+        }
+        button {
+            background-color: #8e24aa;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 1.1em;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #6a1b9a;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .header p {
+            color: #6a1b9a;
+            font-size: 0.9em;
+        }
+        @media (max-width: 600px) {
+            ul {
+                columns: 1;
+                -webkit-columns: 1;
+                -moz-columns: 1;
+            }
+            h1 { font-size: 1.5em; }
+            h2 { font-size: 1.2em; }
+            button { font-size: 1em; }
+        }
     </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 </head>
 <body>
-    <h1>Relatório de Atendimento</h1>
-    <p>Terapeuta: ALEXANDRE GABRIEL OLIVEIRA<br>Contato: (12) 99797-9084</p>
-    
-    <form id="relatorioForm">
-        <label>Nome: <input type="text" id="nome" style="width: 100%;"></label><br>
-        <label>Nascimento: <input type="date" id="nascimento"></label><br>
-        <label>Data do Atendimento: <input type="date" id="dataAtendimento"></label><br><br>
+    <div class="container">
+        <div class="header">
+            <h1>Relatório de Atendimento</h1>
+            <p>Terapeuta: ALEXANDRE GABRIEL OLIVEIRA<br>Contato: (12) 99797-9084</p>
+        </div>
         
-        <section>
-            <h2>CLONES</h2>
-            <ul>
-                <li><label><input type="checkbox"> Sim</label></li>
-                <li><label><input type="checkbox"> Não</label></li>
-            </ul>
-            <textarea placeholder="Obs.:"></textarea>
-        </section>
-        
-        <section>
-            <h2>FRACTAIS</h2>
-            <ul>
-                <li><label><input type="checkbox"> Traumas</label></li>
-                <li><label><input type="checkbox"> Ascencionados</label></li>
-                <li><label><input type="checkbox"> Inferiores</label></li>
-                <li><label><input type="checkbox"> Extradimensionais</label></li>
-                <li><label><input type="checkbox"> Presos</label></li>
-                <li><label><input type="checkbox"> Vida Passada</label></li>
-                <li><label><input type="checkbox"> Vida Atual</label></li>
-                <li><label><input type="checkbox"> Vida Paralela</label></li>
-            </ul>
-            <textarea placeholder="Obs.:"></textarea>
-        </section>
-        
-        <section>
-            <h2>SÓLIDOS PLATÔNICOS</h2>
-            <ul>
-                <li><label><input type="checkbox"> Tetraedro</label></li>
-                <li><label><input type="checkbox"> Hexaedro (Cubo)</label></li>
-                <li><label><input type="checkbox"> Octaedro</label></li>
-                <li><label><input type="checkbox"> Dodecaedro</label></li>
-                <li><label><input type="checkbox"> Icosaedro</label></li>
-            </ul>
-            <textarea placeholder="Obs.:"></textarea>
-        </section>
-        
-        <section>
-            <h2>NAVES CONVOCADAS</h2>
-            <ul>
-                <li><label><input type="checkbox"> Comando Santa Esmeralda</label></li>
-                <li><label><input type="checkbox"> Comando Santa Ametista</label></li>
-                <li><label><input type="checkbox"> Comando Arcturiano</label></li>
-                <li><label><input type="checkbox"> Comando Mahatma</label></li>
-                <li><label><input type="checkbox"> Comando Operação Resgate</label></li>
-            </ul>
-            <textarea placeholder="Obs.:"></textarea>
-        </section>
-        
-        <section>
-            <h2>EQUIPES ESTELARES CONVOCADAS</h2>
-            <ul>
-                <li><label><input type="checkbox"> Arcturianos</label></li>
-                <li><label><input type="checkbox"> Pleiadianos</label></li>
-                <li><label><input type="checkbox"> Sirianos</label></li>
-                <li><label><input type="checkbox"> Venusianos</label></li>
-                <li><label><input type="checkbox"> Reptilianos Positivados</label></li>
-                <li><label><input type="checkbox"> Antarianos</label></li>
-            </ul>
-            <textarea placeholder="Obs.:"></textarea>
-        </section>
-        
-        <section>
-            <h2>MESTRES DA FRATERNIDADE BRANCA E RAIOS CÓSMICOS</h2>
-            <ul>
-                <li><label><input type="checkbox"> Raio Azul</label></li>
-                <li><label><input type="checkbox"> Raio Dourado</label></li>
-                <li><label><input type="checkbox"> Raio Rosa</label></li>
-                <li><label><input type="checkbox"> Raio Violeta</label></li>
-                <li><label><input type="checkbox"> Raio Branco</label></li>
-                <li><label><input type="checkbox"> Raio Verde</label></li>
-                <li><label><input type="checkbox"> Raio Rubi-Dourado</label></li>
-            </ul>
-            <textarea placeholder="Obs.:"></textarea>
-        </section>
-        
-        <section>
-            <h2>TRINDADE ANGELICAL</h2>
-            <ul>
-                <li><label><input type="checkbox"> Potestades</label></li>
-                <li><label><input type="checkbox"> Principados</label></li>
-                <li><label><input type="checkbox"> Anjos</label></li>
-            </ul>
-            <textarea placeholder="Obs.:"></textarea>
-        </section>
-        
-        <section>
-            <h2>GEOMETRIA SAGRADA ARCTURIANA</h2>
-            <ul>
-                <li><label><input type="checkbox"> Amosh</label></li>
-                <li><label><input type="checkbox"> Ankh'Zravah</label></li>
-                <li><label><input type="checkbox"> Peeq-Nahir</label></li>
-                <li><label><input type="checkbox"> Shekinah Zaetron</label></li>
-                <li><label><input type="checkbox"> Sik-Mallesh</label></li>
-                <li><label><input type="checkbox"> Thram'Ballah</label></li>
-                <li><label><input type="checkbox"> Philaiy Christus</label></li>
-            </ul>
-            <textarea placeholder="Obs.:"></textarea>
-        </section>
-        
-        <section>
-            <h2>CÂMARAS ARCTURIANAS ATIVADAS</h2>
-            <ul>
-                <li><label><input type="checkbox"> Programa de remoção de Matriz</label></li>
-                <li><label><input type="checkbox"> Placa eletrônica Arcturiana</label></li>
-                <li><label><input type="checkbox"> Tecnologia Arcturiana de Infusão de Luz</label></li>
-                <li><label><input type="checkbox"> Câmara de Amor e Alegria Arcturiana</label></li>
-                <li><label><input type="checkbox"> Cilindro Dourado Arcturiano</label></li>
-                <li><label><input type="checkbox"> Geração dos Arcturianos das 12 cadeias de DNA</label></li>
-                <li><label><input type="checkbox"> Tecnologia Cristalina para curar feridas</label></li>
-                <li><label><input type="checkbox"> Proteção Cristalina das crianças</label></li>
-                <li><label><input type="checkbox"> Aumento do Quociente de luz para Fortalecer o corpo físico</label></li>
-                <li><label><input type="checkbox"> Invocação dos Arcturianos em situações extremas</label></li>
-                <li><label><input type="checkbox"> Tecnologia Arcturiana do Cristal Líquido</label></li>
-                <li><label><input type="checkbox"> Máquina Arcturiana de prana</label></li>
-                <li><label><input type="checkbox"> Sistema Arcturiano de revestment</label></li>
-                <li><label><input type="checkbox"> Máquina Arcturiana do Júbilo</label></li>
-                <li><label><input type="checkbox"> Aumento Arcturiano de voltagem</label></li>
-                <li><label><input type="checkbox"> Reprogramação Arcturiana da estrutura bioquímica elétrica</label></li>
-                <li><label><input type="checkbox"> Mestres de cura plano interior</label></li>
-                <li><label><input type="checkbox"> Restauração da Matriz divina</label></li>
-                <li><label><input type="checkbox"> Banhos de cor nos templos de cura do plano interior</label></li>
-                <li><label><input type="checkbox"> Purificação por meio do programa de eliminação do medo</label></li>
-                <li><label><input type="checkbox"> Eliminação de resíduos tóxicos etéricos</label></li>
-                <li><label><input type="checkbox"> Ajuste da rede etérica</label></li>
-                <li><label><input type="checkbox"> Purificação de velhas marcas do campo de energia</label></li>
-                <li><label><input type="checkbox"> Purificação genética completa</label></li>
-                <li><label><input type="checkbox"> Purificação celular cósmica</label></li>
-                <li><label><input type="checkbox"> Câmara de Purificação dos animais de estimação</label></li>
-            </ul>
-            <textarea placeholder="Obs.:"></textarea>
-        </section>
-        
-        <section>
-            <h2>INFLUÊNCIAS ENERGÉTICAS</h2>
-            <ul>
-                <li><label><input type="checkbox"> Trabalhos Mágicos</label></li>
-                <li><label><input type="checkbox"> Afasta mento</label></li>
-                <li><label><input type="checkbox"> Amarração</label></li>
-                <li><label><input type="checkbox"> Vingança/Destruição</label></li>
-                <li><label><input type="checkbox"> Contratos Energéticos</label></li>
-                <li><label><input type="checkbox"> Religião/Culto/Seita</label></li>
-                <li><label><input type="checkbox"> Profissional</label></li>
-                <li><label><input type="checkbox"> Ancestralidade/Familiar</label></li>
-                <li><label><input type="checkbox"> Íncubus/Súcubos</label></li>
-                <li><label><input type="checkbox"> Magos negativos</label></li>
-                <li><label><input type="checkbox"> Multidimensionais</label></li>
-                <li><label><input type="checkbox"> Decretos/Votos</label></li>
-                <li><label><input type="checkbox"> Pobreza/Celibato</label></li>
-                <li><label><input type="checkbox"> Servidão Astral</label></li>
-                <li><label><input type="checkbox"> Casamento/Relacionamento</label></li>
-                <li><label><input type="checkbox"> Obsessores</label></li>
-                <li><label><input type="checkbox"> Encarnado</label></li>
-                <li><label><input type="checkbox"> Desencarnado</label></li>
-                <li><label><input type="checkbox"> Auto-Obsessão</label></li>
-            </ul>
-            <textarea placeholder="Obs.:"></textarea>
-        </section>
-        
-        <section>
-            <h2>LIMPEZAS ENERGÉTICAS</h2>
-            <h3>Tipo</h3>
-            <ul>
-                <li><label><input type="checkbox"> Acúmulo Energético</label></li>
-                <li><label><input type="checkbox"> Miasmas</label></li>
-                <li><label><input type="checkbox"> Formas Pensamentos</label></li>
-                <li><label><input type="checkbox"> Lama Astral</label></li>
-                <li><label><input type="checkbox"> Larvas Astrais</label></li>
-                <li><label><input type="checkbox"> Cobra Astral</label></li>
-                <li><label><input type="checkbox"> Ovoides</label></li>
-                <li><label><input type="checkbox"> Chips</label></li>
-                <li><label><input type="checkbox"> Implants</label></li>
-            </ul>
-            <h3>Localização</h3>
-            <ul>
-                <li><label><input type="checkbox"> Cabeça</label></li>
-                <li><label><input type="checkbox"> Olhos</label></li>
-                <li><label><input type="checkbox"> Nariz</label></li>
-                <li><label><input type="checkbox"> Boca</label></li>
-                <li><label><input type="checkbox"> Ouvidos</label></li>
-                <li><label><input type="checkbox"> Pescoço</label></li>
-                <li><label><input type="checkbox"> Nuca</label></li>
-                <li><label><input type="checkbox"> Costas (Superior)</label></li>
-                <li><label><input type="checkbox"> Costas (Meio)</label></li>
-                <li><label><input type="checkbox"> Lombar</label></li>
-                <li><label><input type="checkbox"> Quadril</label></li>
-                <li><label><input type="checkbox"> Órgãos Sexuais</label></li>
-                <li><label><input type="checkbox"> Coxas</label></li>
-                <li><label><input type="checkbox"> Posteriores</label></li>
-                <li><label><input type="checkbox"> Ombros</label></li>
-                <li><label><input type="checkbox"> Escápulas</label></li>
-                <li><label><input type="checkbox"> Cotovelos</label></li>
-                <li><label><input type="checkbox"> Braços</label></li>
-                <li><label><input type="checkbox"> Mãos</label></li>
-                <li><label><input type="checkbox"> Peito/Tórax</label></li>
-                <li><label><input type="checkbox"> Abdômen/Estômago</label></li>
-                <li><label><input type="checkbox"> Joelhos</label></li>
-                <li><label><input type="checkbox"> Canelas</label></li>
-                <li><label><input type="checkbox"> Panturrilhas</label></li>
-                <li><label><input type="checkbox"> Tornozelos</label></li>
-                <li><label><input type="checkbox"> Pés</label></li>
-                <li><label><input type="checkbox"> Lado Direito</label></li>
-                <li><label><input type="checkbox"> Lado Esquerdo</label></li>
-            </ul>
-            <textarea placeholder="Obs.:"></textarea>
-        </section>
-        
-        <section>
-            <h2>ALINHAMENTOS ENERGÉTICOS</h2>
-            <ul>
-                <li><label><input type="checkbox"> Ativação do Centro Superior</label></li>
-                <li><label><input type="checkbox"> Chakra Coronário</label></li>
-                <li><label><input type="checkbox"> Chakra Frontal</label></li>
-                <li><label><input type="checkbox"> Chakra Laríngeo</label></li>
-                <li><label><input type="checkbox"> Chakra Cardíaco</label></li>
-                <li><label><input type="checkbox"> Chakra Plexo Solar</label></li>
-                <li><label><input type="checkbox"> Chakra Sexual</label></li>
-                <li><label><input type="checkbox"> Chakra Básico</label></li>
-                <li><label><input type="checkbox"> Chakra das Mãos</label></li>
-                <li><label><input type="checkbox"> Chakra dos Pés</label></li>
-                <li><label><input type="checkbox"> Ativação do Centro Energético Inferior</label></li>
-            </ul>
-            <textarea placeholder="Obs.:"></textarea>
-        </section>
-        
-        <section>
-            <h2>FREQUÊNCIA ENERGÉTICA (ESCALA DE HAWKINS)</h2>
-            <ul>
-                <li><label><input type="checkbox"> Vergonha (20 Hz)</label></li>
-                <li><label><input type="checkbox"> Culpa (30 Hz)</label></li>
-                <li><label><input type="checkbox"> Apatia (50 Hz)</label></li>
-                <li><label><input type="checkbox"> Dor/Tristeza (75 Hz)</label></li>
-                <li><label><input type="checkbox"> Medo (100 Hz)</label></li>
-                <li><label><input type="checkbox"> Desejo (125 Hz)</label></li>
-                <li><label><input type="checkbox"> Raiva (150 Hz)</label></li>
-                <li><label><input type="checkbox"> Arrogância/Orgulho (175 Hz)</label></li>
-                <li><label><input type="checkbox"> Coragem (200 Hz)</label></li>
-                <li><label><input type="checkbox"> Neutralidade (250 Hz)</label></li>
-                <li><label><input type="checkbox"> Disposição/Boa vontade (310 Hz)</label></li>
-                <li><label><input type="checkbox"> Aceitação/Perdão/Compreensão (350 Hz)</label></li>
-                <li><label><input type="checkbox"> Razão/Contemplação (400 Hz)</label></li>
-                <li><label><input type="checkbox"> Amor (500 Hz)</label></li>
-                <li><label><input type="checkbox"> Alegria/Humor (540 Hz)</label></li>
-                <li><label><input type="checkbox"> Paz (600 Hz)</label></li>
-            </ul>
-            <textarea placeholder="Obs.:"></textarea>
-        </section>
-        
-        <button type="button" onclick="gerarPDF()">Gerar PDF</button>
-    </form>
-    
-    <script>
-        function gerarPDF() {
-            const { jsPDF } = window.jspdf;
-            const doc = new jsPDF();
-            let y = 10; // Posição vertical inicial
+        <form id="relatorioForm">
+            <label>Nome: <input type="text" id="nome"></label><br>
+            <label>Nascimento: <input type="date" id="nascimento"></label><br>
+            <label>Data do Atendimento: <input type="date" id="dataAtendimento"></label><br><br>
             
-            doc.setFontSize(16);
-            doc.text('Relatório de Atendimento', 105, y, { align: 'center' });
-            y += 10;
-            doc.setFontSize(12);
-            doc.text('Terapeuta: ALEXANDRE GABRIEL OLIVEIRA', 10, y);
-            y += 5;
-            doc.text('Contato: (12) 99797-9084', 10, y);
-            y += 10;
-            
-            const nome = document.getElementById('nome').value;
-            const nascimento = document.getElementById('nascimento').value;
-            const dataAtendimento = document.getElementById('dataAtendimento').value;
-            doc.text(`Nome: ${nome}`, 10, y);
-            y += 5;
-            doc.text(`Nascimento: ${nascimento}`, 10, y);
-            y += 5;
-            doc.text(`Data do Atendimento: ${dataAtendimento}`, 10, y);
-            y += 10;
-            
-            const sections = document.querySelectorAll('section');
-            sections.forEach(section => {
-                const title = section.querySelector('h2').textContent;
-                doc.setFontSize(14);
-                doc.text(title, 10, y);
-                y += 7;
-                
-                const checkboxes = section.querySelectorAll('input[type="checkbox"]');
-                let selected = [];
-                checkboxes.forEach(cb => {
-                    if (cb.checked) selected.push(cb.parentElement.textContent);
-                });
-                if (selected.length > 0) {
-                    doc.setFontSize(12);
-                    doc.text('Selecionados: ' + selected.join(', '), 10, y);
-                    y += 5;
-                }
-                
-                const obs = section.querySelector('textarea').value;
-                if (obs) {
-                    doc.text(`Obs.: ${obs}`, 10, y);
-                    y += 10;
-                } else {
-                    y += 5;
-                }
-                
-                if (y > 270) { // Nova página se necessário
-                    doc.addPage();
-                    y = 10;
-                }
-            });
-            
-            doc.save('relatorio-atendimento.pdf');
+            <section>
+                <h<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatório de Atendimento Digital</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"%3E%3Cpath d="M50 10 Q 70 30 90 50 Q 70 70 50 90 Q 30 70 10 50 Q 30 30 50 10" fill="none" stroke="%23e1bee7" stroke-width="2"/%3E%3C/svg%3E') repeat;
+            color: #333;
+            line-height: 1.6;
         }
-    </script>
-</body>
-</html>
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #6a1b9a;
+            text-align: center;
+            font-size: 2em;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+        h2 {
+            color: #8e24aa;
+            font-size: 1.5em;
+            margin-top: 20px;
+            border-bottom: 2px solid #ce93d8;
+            padding-bottom: 5px;
+        }
+        section {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #f5ebfd;
+            border-radius: 5px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+            columns: 2;
+            -webkit-columns: 2;
+            -moz-columns: 2;
+        }
+        li {
+            margin: 5px 0;
+        }
+        label {
+            display: flex;
+            align-items: center;
+            font-size: 0.9em;
+        }
+        input[type="checkbox"] {
+            margin-right: 10px;
+        }
+        input[type="text"], input[type="date"], textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ce93d8;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        textarea {
+            height: 60px;
+            resize: vertical;
+        }
+        button {
+            background-color: #8e24aa;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 1.1em;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #6a1b9a;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .header p {
+            color: #6a1b9a;
+            font-size: 0.9em;
+        }
+        @media (max-width: 600px) {
+            ul {
+                columns: 1;
+                -webkit-columns: 1;
+                -moz-columns: 1;
+            }
+            h1 { font-size: 1.5em; }
+            h2 { font-size: 1.2em; }
+            button { font-size: 1em; }
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Relatório de Atendimento</h1>
+            <p>Terapeuta: ALEXANDRE GABRIEL OLIVEIRA<br>Contato: (12) 99797-9084</p>
+        </div>
+        
+        <form id="relatorioForm">
+            <label>Nome: <input type="text" id="nome"></label><br>
+            <label>Nascimento: <input type="date" id="nascimento"></label><br>
+            <label>Data do Atendimento: <input type="date" id="dataAtendimento"></label><br><br>
+            
+            <section>
+                <h
